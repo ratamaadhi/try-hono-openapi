@@ -22,8 +22,6 @@ vi.mock("@/db", () => ({
 }));
 
 describe("tasks routes", () => {
-
-
   it("post /tasks validates the body when creating", async () => {
     const response = await client.tasks.$post({
       // @ts-expect-error
