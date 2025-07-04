@@ -14,10 +14,9 @@ export const tasks = pgTable("tasks", {
 
 export const selectTasksSchema = createSelectSchema(tasks);
 
-export const insertTasksSchema = createInsertSchema(tasks,
-  {
-    name: string => string.min(1, "Context is required").max(500),
-  })
+export const insertTasksSchema = createInsertSchema(tasks, {
+  name: string => string.min(1, "Context is required").max(500),
+})
   .required({
     done: true,
   })
